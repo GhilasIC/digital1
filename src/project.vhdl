@@ -16,6 +16,17 @@ entity tt_um_vhdl_fsm is
 end tt_um_vhdl_fsm;
 
 architecture rtl of tt_um_vhdl_fsm is
+    component vending_machine is
+      port (
+        clk      : in  std_logic;                    -- Clock input
+        reset    : in  std_logic;                    -- Async, active-high reset
+        coin     : in  std_logic;                    -- Coin detected
+        btn      : in  std_logic_vector(1 downto 0); -- Buttons (selection/cancel/etc.)
+        dispense : out std_logic;                    -- Dispense pulse (Moore)
+        change   : out std_logic                     -- Change/refund pulse (Moore)
+      );
+end component;
+
     signal reset_s    : std_logic;  -- active-high internal reset
     signal dispense_s : std_logic;
     signal change_s   : std_logic;
@@ -33,7 +44,7 @@ begin
     uo_out(7 downto 2) <= (others => '0');
 
     -- FSM instance
-    u_vm : entity work.vending_machine
+    u_vm : vending_machine
         port map (
             clk      => clk,
             reset    => reset_s,          -- active-high
