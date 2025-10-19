@@ -8,6 +8,7 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
+![Board](1758819126776.jpeg)
 
 It’s a 4-state Moore FSM with states: idle → product_selected → (dispense_product | return_change) → idle.
 Inputs :
