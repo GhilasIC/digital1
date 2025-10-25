@@ -26,10 +26,23 @@ The “one-cycle pulse” behavior comes from those terminal states automaticall
 
 ## How to test
 Scenarios exercised:
-Scenario 1: coin pulse, then btn="11" → expect one cycle dispense='1', change='0'.
-Scenario 2: coin pulse, then btn="01" → expect one cycle change='1', dispense='0'.
-Scenario 3: coin pulse, then btn="10" (cancel) → no pulses, returns to idle.
-Scenario 4: coin pulse, wait with btn="00", later btn="11" → eventually one cycle dispense='1'
+## Scenario 1: 
+coin pulse, then btn="11" → expect one cycle dispense='1', change='0'.
+![Board](btn00.png)
+
+## Scenario 2: 
+coin pulse, then btn="01" → expect one cycle change='1', dispense='0'.
+![Board](btn01.png)
+
+## Scenario 3: 
+coin pulse, then btn="10" (cancel) → no pulses, returns to idle.
+![Board](btn10.png)
+
+## Scenario 4: 
+coin pulse, wait with btn="00", later btn="11" → eventually one cycle dispense='1'
+
+![Board](btn00.png)
+![Board](btn11.png)
 
 PS: You should see each pulse aligned to a clock and lasting exactly one period.
 
