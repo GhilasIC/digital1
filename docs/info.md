@@ -28,7 +28,7 @@ The “one-cycle pulse” behavior comes from those terminal states automaticall
 Scenarios exercised:
 ## Scenario 1: 
 coin pulse, then btn="11" → expect one cycle dispense='1', change='0'.
-![Board](btn00.png)
+![Board](btn11.png)
 
 ## Scenario 2: 
 coin pulse, then btn="01" → expect one cycle change='1', dispense='0'.
